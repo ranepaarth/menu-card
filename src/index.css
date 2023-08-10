@@ -44,9 +44,11 @@ body {
     font-size: medium;
     color: antiquewhite;
     letter-spacing: 2px;
+    transition: all 0.2s ease;
 }
 
 .btn-container .btns button:hover{
     background: rgb(173, 118, 40);
     cursor: pointer;
 }
+

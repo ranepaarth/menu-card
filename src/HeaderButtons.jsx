@@ -1,12 +1,12 @@
 import React from "react";
 
-const HeaderButtons = () => {
+const HeaderButtons = ({ filterItems }) => {
   return (
     <div className="btns">
-      <button>All</button>
-      <button>Breakfast</button>
-      <button>Lunch</button>
-      <button>Shakes</button>
+      <button onClick={() => filterItems("all")}>All</button>
+      <button onClick={() => filterItems("breakfast")}>Breakfast</button>
+      <button onClick={() => filterItems("lunch")}>Lunch</button>
+      <button onClick={() => filterItems("shakes")}>Shakes</button>
     </div>
   );
 };

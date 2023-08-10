@@ -3,12 +3,17 @@ import HeaderButtons from "./HeaderButtons";
 import Menu from "./Menu";
 import items from "./data.js";
 
-// const Router = createBrowserRouter();
+const allCategory = items.map((item) => item.category);
+
+const newCategory = ['all',...new Set(allCategory)]
+
+console.log(newCategory);
+
 
 const App = () => {
   const [menuItems, setMenuItems] = useState(items);
 
-  // const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(newCategory);
 
   const filterItems = (category) => {
     if (category === "all") {
@@ -26,7 +31,7 @@ const App = () => {
         <div className="text-underline"></div>
       </div>
       <div className="btn-container">
-        <HeaderButtons menuItems = {menuItems} filterItems={filterItems} />
+        <HeaderButtons categories = {categories} filterItems={filterItems} />
       </div>
       <Menu menuItems={menuItems} />
     </>
